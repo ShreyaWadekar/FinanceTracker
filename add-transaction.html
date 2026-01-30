@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FinTrack | Add Transaction</title>
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/add-transaction.css">
+</head>
+<body>
+<div class="app">
+<!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-icon">
+                    <i class="bi bi-wallet2"></i>
+                </div>
+                <div>
+                    <h3>FinTrack</h3>
+                    <small>PRO ADVISOR</small>
+                </div>
+            </div>
+
+            <nav>
+                <a href="dashboard.html" class="active"><i class="bi bi-grid"></i> Dashboard</a>
+                <a  href="add-transaction.html" ><i class="bi bi-arrow-left-right"></i> Transactions</a>
+                <a href="budgets.html"><i class="bi bi-pie-chart"></i> Budgets</a>
+                <a href="reports.html"><i class="bi bi-graph-up"></i> Reports</a>
+                <a href="settings.html"><i class="bi bi-gear"></i> Settings</a>
+            </nav>
+
+            <button class="add-transaction">
+                <i class="bi bi-plus-lg"></i> Add Transaction
+            </button>
+        </aside>
+
+<!-- PAGE -->
+<main class="page">
+<div class="page-container">
+     <!-- TOP BAR -->
+            <header class="topbar">
+                <div>
+                    <h1>Add New Transaction</h1>
+  <p class="subtitle">Record your spending or earnings to keep your budget on track.</p>
+                </div>
+
+                <div class="top-right">
+                    <div class="search">
+                        <i class="bi bi-search"></i>
+                        <input type="text" placeholder="Search data...">
+                    </div>
+                    <i class="bi bi-bell"></i>
+                    <div class="profile">
+                        Alex Johnson <span>Pro Plan</span>
+                    </div>
+                </div>
+            </header>
+ 
+
+  <div class="layout">
+
+    <!-- FORM -->
+    <div class="card form-card">
+
+      <form onsubmit="saveTransaction(event)">
+
+        <!-- TOGGLE -->
+       <div class="toggle-wrap">
+  <div class="toggle-pill" id="togglePill"></div>
+
+  <button type="button" class="toggle-btn active"
+          onclick="setType('expense')">Expense</button>
+  <button type="button" class="toggle-btn"
+          onclick="setType('income')">Income</button>
+</div>
+
+<input type="hidden" id="txType" value="expense">
+
+
+        <input type="hidden" id="txType" value="expense">
+
+        <!-- AMOUNT + DATE -->
+        <div class="row">
+          <div class="field">
+            <label>Amount</label>
+            <div class="input-icon">
+              <span>$</span>
+              <input type="number" id="amount" placeholder="0.00"
+                     oninput="updateImpact()" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Date</label>
+            <input type="date" required>
+          </div>
+        </div>
+
+        <!-- DESCRIPTION -->
+        <div class="field">
+          <label>Description</label>
+          <input type="text" id="desc" placeholder="Starbucks Coffee" required>
+          <span class="chip"><i class="bi bi-stars"></i> AI Tracking</span>
+        </div>
+
+        <!-- CATEGORY -->
+        <div class="field">
+          <label>Category</label>
+          <select id="category">
+            <option>Food & Drink</option>
+            <option>Groceries</option>
+            <option>Housing</option>
+            <option>Entertainment</option>
+          </select>
+          <span class="chip green">
+            <i class="bi bi-lightning-fill"></i>
+            AI Suggested: Food & Drink
+          </span>
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="actions">
+          <button class="primary">
+            <i class="bi bi-plus-circle"></i> Add Transaction
+          </button>
+          <button type="button" class="secondary"
+                  onclick="window.location.href='dashboard.html'">
+            Cancel
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="side">
+
+      <!-- BUDGET IMPACT -->
+      <div class="card">
+        <h3>Budget Impact</h3>
+        <p class="muted">FOOD & DRINK BUDGET</p>
+
+        <h2>$<span id="usedAmount">124.50</span> <span>/ $300.00</span></h2>
+
+        <div class="progress">
+          <div id="progressBar" style="width:42%"></div>
+          <small><span id="percent">42</span>%</small>
+        </div>
+        
+
+        <div class="impact-box">
+          <p>After this transaction:</p>
+          <p>Remaining Budget <b>$<span id="remaining">175.50</span></b></p>
+          <p>Daily Allowance <b>$12.54 / day</b></p>
+        </div>
+      </div>
+
+      <!-- INSIGHT -->
+      <div class="card insight">
+        <i class="bi bi-lightbulb"></i>
+        <p>You’ve spent 15% less on <b>Food & Drink</b> compared to last month. Keep it up!</p>
+      </div>
+
+      <!-- QUICK ACTIONS -->
+      <div class="card">
+        <h4>Quick Actions</h4>
+        <ul class="quick">
+          <li><i class="bi bi-paperclip"></i> Attach Receipt</li>
+          <li><i class="bi bi-arrow-repeat"></i> Make Recurring</li>
+          <li><i class="bi bi-sliders"></i> Adjust Category Budget</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+</main>
+
+<!-- JS -->
+<script>
+let currentType = "expense";
+let budgetLimit = 300;
+let currentUsed = 124.5;
+
+function setType(type) {
+  currentType = type;
+  document.getElementById("txType").value = type;
+
+  const pill = document.getElementById("togglePill");
+
+  if (type === "income") {
+    pill.style.transform = "translateX(100%)";
+  } else {
+    pill.style.transform = "translateX(0)";
+  }
+}
+
+
+function updateImpact() {
+  let amt = Number(amount.value || 0);
+  let used = currentType === "expense"
+    ? currentUsed + amt
+    : currentUsed - amt;
+
+  if (used < 0) used = 0;
+
+  let percent = Math.min((used / budgetLimit) * 100, 100);
+
+  usedAmount.innerText = used.toFixed(2);
+  remaining.innerText = (budgetLimit - used).toFixed(2);
+  document.getElementById("percent").innerText = percent.toFixed(0);
+  progressBar.style.width = percent + "%";
+}
+
+function saveTransaction(e) {
+  e.preventDefault();
+
+  let tx = {
+    type: currentType,
+    amount: Number(amount.value),
+    category: category.value,
+    description: desc.value,
+    date: new Date().toLocaleDateString()
+  };
+
+  let data = JSON.parse(localStorage.getItem("transactions")) || [];
+  data.push(tx);
+  localStorage.setItem("transactions", JSON.stringify(data));
+
+  window.location.href = "dashboard.html";
+}
+</script>
+</div>
+</body>
+</html>
