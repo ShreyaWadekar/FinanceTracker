@@ -64,7 +64,30 @@ nav a.active {
   background: #e9fdf2;
   color: #00c853;
 }
+/* NAV LINKS — SAME AS FIRST SIDEBAR */
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+}
 
+/* ACTIVE STATE */
+.sidebar nav a.active {
+  background: #e9fdf2;
+  color: #00c853;
+}
+
+/* HOVER STATE */
+.sidebar nav a:hover {
+  background: #e9fdf2;
+  color: #00c853;
+}
 .add-transaction {
   margin-top: auto;
   padding: 12px;

@@ -26,11 +26,12 @@
             </div>
 
             <nav>
-                <a href="dashboard.html" class="active"><i class="bi bi-grid"></i> Dashboard</a>
-                <a  href="add-transaction.html" ><i class="bi bi-arrow-left-right"></i> Transactions</a>
+                <a href="dashboard.html" ><i class="bi bi-grid"></i> Dashboard</a>
+                <a  href="add-transaction.html" class="active" ><i class="bi bi-arrow-left-right"></i> Transactions</a>
                 <a href="budgets.html"><i class="bi bi-pie-chart"></i> Budgets</a>
                 <a href="reports.html"><i class="bi bi-graph-up"></i> Reports</a>
-                <a href="settings.html"><i class="bi bi-gear"></i> Settings</a>
+                <a href="bills.html" ><i class="bi bi-calendar-check"></i> Bills</a>
+                <a href="savings.html"><i class="bi bi-bullseye"></i> Savings</a>
             </nav>
 
             <button class="add-transaction">
@@ -146,10 +147,10 @@
 
         <h2>$<span id="usedAmount">124.50</span> <span>/ $300.00</span></h2>
 
-        <div class="progress">
+         <div class="progress">
           <div id="progressBar" style="width:42%"></div>
-          <small><span id="percent">42</span>%</small>
         </div>
+        <small><span id="percent">42</span>%</small>
         
 
         <div class="impact-box">
@@ -233,6 +234,7 @@ function saveTransaction(e) {
 
   window.location.href = "dashboard.html";
 }
+
 </script>
 </div>
 </body>

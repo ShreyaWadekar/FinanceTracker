@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Savings Goals | FinTrack</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/savings.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- ================= SIDEBAR ================= -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-icon">
+                    <i class="bi bi-wallet2"></i>
+                </div>
+                <div>
+                    <h3>FinTrack</h3>
+                    <small>PRO ADVISOR</small>
+                </div>
+            </div>
+
+            <nav>
+                <a href="dashboard.html"><i class="bi bi-grid"></i> Dashboard</a>
+                <a href="transactions.html"><i class="bi bi-arrow-left-right"></i> Transactions</a>
+                <a href="budgets.html"><i class="bi bi-pie-chart"></i> Budgets</a>
+                <a href="reports.html"><i class="bi bi-graph-up"></i> Reports</a>
+                <a href="bills.html"><i class="bi bi-calendar-check"></i> Bills</a>
+                <a href="savings.html" class="active"><i class="bi bi-bullseye"></i> Savings</a>
+            </nav>
+
+            <button class="add-transaction">+ Add Goal</button>
+        </aside>
+
+        <!-- ================= MAIN ================= -->
+        <main class="main">
+            <div class="container">
+
+                <!-- PAGE HEADER -->
+                <header class="topbar">
+                    <div>
+                        <h1>Savings Goals</h1>
+                        <p>Track your progress towards your financial milestones.</p>
+                    </div>
+
+
+                    <div class="top-right">
+                        <div class="search">
+                            <i class="bi bi-search"></i>
+                            <input type="text" placeholder="Search data...">
+                        </div>
+                        <i class="bi bi-bell"></i>
+                        <div class="profile">
+                            Alex Johnson <span>Pro Plan</span>
+                        </div>
+                    </div>
+                </header>
+                <div class="actions">
+                    <button class="btn ghost">View Insights</button>
+                    <button class="btn primary">+ New Goal</button>
+                </div>
+
+                <!-- GRID -->
+                <div class="savings-grid">
+
+                    <!-- LEFT PANEL -->
+                    <div>
+
+                        <!-- TOTAL SAVINGS WITH TABS -->
+                        <div class="total-card">
+                            <small>TOTAL SAVINGS</small>
+                            <h2>$12,450.00</h2>
+
+                            <ul class="quick-links">
+                                <li class="active" onclick="showSavingsTab('overview', this)">Overview</li>
+                                <li onclick="showSavingsTab('income', this)">Income Streams</li>
+                                <li onclick="showSavingsTab('monthly', this)">Monthly Breakdown</li>
+                                <li onclick="showSavingsTab('activity', this)">Recent Activity</li>
+                            </ul>
+
+                            <div class="savings-tab-content">
+                                <div id="overview" class="s-tab active">
+                                    <p>You’ve saved <strong>20%</strong> of your income.</p>
+                                    <p class="positive">+12% growth this month</p>
+                                </div>
+
+                                <div id="income" class="s-tab">
+                                    <p><strong>Salary:</strong> $7,200</p>
+                                    <p><strong>Freelance:</strong> $3,100</p>
+                                    <p><strong>Investments:</strong> $2,150</p>
+                                </div>
+
+                                <div id="monthly" class="s-tab">
+                                    <p>January: $1,800</p>
+                                    <p>February: $2,050</p>
+                                    <p>March: $2,400</p>
+                                </div>
+
+                                <div id="activity" class="s-tab">
+                                    <p>+ $200 → Emergency Fund</p>
+                                    <p>+ $150 → Laptop Goal</p>
+                                    <p>+ $500 → Vacation Goal</p>
+                                </div>
+                            </div>
+
+                            <button class="manage-btn">Manage Transfers</button>
+                        </div>
+
+                        <!-- QUICK INSIGHTS -->
+                        <div class="insight-card">
+                            <h4>Quick Insights</h4>
+                            <p class="positive">+12% Monthly Savings Rate</p>
+                            <small>You’re saving 20% of your income. Great job!</small>
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT PANEL -->
+                    <div>
+
+                        <!-- GOALS -->
+                        <div class="goals">
+
+                            <div class="goal-card">
+                                <img src="https://images.unsplash.com/photo-1567427018141-0584cfcbf1b8" alt="">
+                                <h4>Emergency Fund</h4>
+                                <p>Safe haven for rainy days</p>
+                                <div class="amount">
+                                    $8,000 <span>/ $10,000</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width:80%"></div>
+                                </div>
+                                <button class="goal-btn">Top Up</button>
+                            </div>
+
+                            <div class="goal-card">
+                                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="">
+                                <h4>Summer Vacation</h4>
+                                <p>Trip to the Maldives</p>
+                                <div class="amount">
+                                    $2,500 <span>/ $5,000</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width:50%"></div>
+                                </div>
+                                <button class="goal-btn">Top Up</button>
+                            </div>
+                            <div class="goal-card">
+                                <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8" alt="">
+                                <h4>New Laptop</h4>
+                                <p>MacBook Pro 16-inch</p>
+                                <div class="amount">
+                                    $1,950 <span>/ $2,000</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width:97%"></div>
+                                </div>
+                                <button class="goal-btn">Top Up</button>
+                            </div>
+
+                            <div class="goal-card add-new">
+                                <i class="bi bi-plus-circle"></i>
+                                <p>Add New Goal</p>
+                                <small>What’s your next big objective?</small>
+                            </div>
+
+                        </div>
+
+                        <!-- ================= RECENT CONTRIBUTIONS ================= -->
+                        <div class="recent-card">
+
+                            <div class="recent-header">
+                                <h3>Recent Contributions</h3>
+                                <a href="#" class="view-all">View All</a>
+                            </div>
+
+                            <div class="recent-item">
+                                <div class="recent-left">
+                                    <div class="icon-box">
+                                        <i class="bi bi-piggy-bank"></i>
+                                    </div>
+                                    <div>
+                                        <strong>Top up for Emergency Fund</strong>
+                                        <small>Today, 2:45 PM</small>
+                                    </div>
+                                </div>
+                                <span class="amount positive">+$200.00</span>
+                            </div>
+
+                            <div class="recent-item">
+                                <div class="recent-left">
+                                    <div class="icon-box">
+                                        <i class="bi bi-laptop"></i>
+                                    </div>
+                                    <div>
+                                        <strong>Auto-transfer: New Laptop</strong>
+                                        <small>Yesterday, 10:00 AM</small>
+                                    </div>
+                                </div>
+                                <span class="amount positive">+$150.00</span>
+                            </div>
+
+                            <div class="recent-item">
+                                <div class="recent-left">
+                                    <div class="icon-box">
+                                        <i class="bi bi-airplane"></i>
+                                    </div>
+                                    <div>
+                                        <strong>Manual Deposit: Summer Vacation</strong>
+                                        <small>2 days ago</small>
+                                    </div>
+                                </div>
+                                <span class="amount positive">+$500.00</span>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- JS -->
+    <script>
+        function showSavingsTab(id, el) {
+            document.querySelectorAll('.s-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.quick-links li').forEach(l => l.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            el.classList.add('active');
+        }
+    </script>
+
+</body>
+
+</html>

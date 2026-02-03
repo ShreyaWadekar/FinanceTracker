@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bill Reminders & Calendar | FinTrack</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/bills.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- ================= SIDEBAR (SAME AS OTHER PAGES) ================= -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-icon">
+                    <i class="bi bi-wallet2"></i>
+                </div>
+                <div>
+                    <h3>FinTrack</h3>
+                    <small>PRO ADVISOR</small>
+                </div>
+            </div>
+
+            <nav>
+                <a href="dashboard.html"><i class="bi bi-grid"></i> Dashboard</a>
+                <a href="transactions.html"><i class="bi bi-arrow-left-right"></i> Transactions</a>
+                <a href="budgets.html"><i class="bi bi-pie-chart"></i> Budgets</a>
+               <a href="reports.html"><i class="bi bi-graph-up"></i> Reports</a>
+                <a href="bills.html" class="active"><i class="bi bi-calendar-check"></i> Bills</a>
+                <a href="savings.html"><i class="bi bi-bullseye"></i> Savings</a>
+            </nav>
+
+            <button class="add-transaction">+ Add New Bill</button>
+        </aside>
+
+        <!-- ================= MAIN ================= -->
+        <main class="main">
+            <div class="container">
+                <!-- ================= TOPBAR ================= -->
+                <header class="topbar">
+                    <div>
+                        <h1>Bill Reminders & Calendar</h1>
+                        <p>Track your spending and never miss a payment deadline.</p>
+                    </div>
+
+                    <div class="top-right">
+                        <div class="search">
+                            <i class="bi bi-search"></i>
+                            <input type="text" placeholder="Search data...">
+                        </div>
+                        <i class="bi bi-bell"></i>
+                        <div class="profile">
+                            Alex Johnson <span>Pro Plan</span>
+                        </div>
+                    </div>
+                </header>
+                <button class="btn primary">
+                    <i class="bi bi-plus"></i> Add New Bill
+                </button>
+
+                <!-- STATS -->
+                <div class="stats">
+
+                    <div class="stat-card">
+                        <small>Total Due This Week</small>
+                        <h2>$1,240.00</h2>
+                        <span class="neg">+12% from last month</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <small>Upcoming Income</small>
+                        <h2>$3,500.00</h2>
+                        <span class="pos">Depositing in 4 days</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <small>Monthly Progress</small>
+                        <h2>3 of 8 Paid</h2>
+                        <div class="progress">
+                            <div class="progress-bar" style="width:38%"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- GRID -->
+                <div class="bill-grid">
+
+                    <!-- ================= CALENDAR ================= -->
+                    <div class="card calendar">
+
+                        <div class="calendar-head">
+                            <div>
+                                <h3>October 2023</h3>
+                                <small>5 upcoming bills this month</small>
+                            </div>
+                            <div class="arrows">
+                                <button>&lsaquo;</button>
+                                <button>&rsaquo;</button>
+                            </div>
+                        </div>
+
+                        <!-- WEEK DAYS -->
+                        <div class="weekdays">
+                            <span>SUN</span><span>MON</span><span>TUE</span>
+                            <span>WED</span><span>THU</span><span>FRI</span><span>SAT</span>
+                        </div>
+
+                        <!-- DAYS GRID -->
+                        <div class="days">
+
+                            <div class="day empty"></div>
+                            <div class="day empty"></div>
+                            <div class="day empty"></div>
+                            <div class="day empty"></div>
+
+                            <div class="day"><span class="date">1</span></div>
+                            <div class="day"><span class="date">2</span></div>
+                            <div class="day"><span class="date">3</span></div>
+                            <div class="day"><span class="date">4</span></div>
+                            <div class="day today">
+                                <span class="date">5</span>
+                                <small class="bill green">Netflix $15</small>
+                            </div>
+
+                            <div class="day"><span class="date">6</span></div>
+                            <div class="day"><span class="date">7</span></div>
+
+                            <div class="day"><span class="date">8</span></div>
+                            <div class="day"><span class="date">9</span></div>
+
+                            <div class="day">
+                                <span class="date">10</span>
+                                <small class="bill red">Rent $1200</small>
+                            </div>
+
+                            <div class="day"><span class="date">11</span></div>
+                            <div class="day"><span class="date">12</span></div>
+                            <div class="day"><span class="date">13</span></div>
+
+                            <div class="day">
+                                <span class="date">14</span>
+                                <small class="bill orange">Hydro $82</small>
+                            </div>
+
+                            <div class="day"><span class="date">15</span></div>
+                            <div class="day"><span class="date">16</span></div>
+                            <div class="day"><span class="date">17</span></div>
+                            <div class="day"><span class="date">18</span></div>
+                            <div class="day"><span class="date">19</span></div>
+                            <div class="day"><span class="date">20</span></div>
+                            <div class="day"><span class="date">21</span></div>
+                            <div class="day"><span class="date">22</span></div>
+                            <div class="day"><span class="date">23</span></div>
+                            <div class="day"><span class="date">24</span></div>
+                            <div class="day"><span class="date">25</span></div>
+                            <div class="day"><span class="date">26</span></div>
+                            <div class="day"><span class="date">27</span></div>
+                            <div class="day"><span class="date">28</span></div>
+                            <div class="day"><span class="date">29</span></div>
+                            <div class="day"><span class="date">30</span></div>
+                        </div>
+                    </div>
+
+
+                   <!-- ================= UPCOMING BILLS ================= -->
+<div class="upcoming-card">
+
+  <div class="upcoming-header">
+    <h3>Upcoming Bills</h3>
+    <span class="chip">Next 7 Days</span>
+  </div>
+
+  <!-- BILL ITEM : OVERDUE -->
+  <div class="bill-box overdue">
+    <div class="bill-left">
+      <div class="bill-icon red">
+        <i class="bi bi-house-door"></i>
+      </div>
+      <div>
+        <strong>Monthly Rent</strong>
+        <small>Apartment Complex LLC</small>
+      </div>
+    </div>
+
+    <div class="bill-right">
+      <strong>$1,200.00</strong>
+      <small class="danger">Overdue (3 days)</small>
+      <div class="bill-footer">
+        <span><i class="bi bi-calendar3"></i> Oct 2, 2023</span>
+        <button class="btn dark">Pay Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BILL ITEM : DUE TODAY -->
+  <div class="bill-box">
+    <div class="bill-left">
+      <div class="bill-icon blue">
+        <i class="bi bi-film"></i>
+      </div>
+      <div>
+        <strong>Netflix Standard</strong>
+        <small>Entertainment</small>
+      </div>
+    </div>
+
+    <div class="bill-right">
+      <strong>$15.49</strong>
+      <small class="warn">Due Today</small>
+      <div class="bill-footer space">
+        <span class="auto">
+          <i class="bi bi-arrow-repeat"></i> Auto-pay enabled
+        </span>
+        <label class="toggle">
+          <input type="checkbox" checked>
+          <span></span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- BILL ITEM : UPCOMING -->
+  <div class="bill-box">
+    <div class="bill-left">
+      <div class="bill-icon orange">
+        <i class="bi bi-lightning-charge"></i>
+      </div>
+      <div>
+        <strong>City Electric</strong>
+        <small>Utilities</small>
+      </div>
+    </div>
+
+    <div class="bill-right">
+      <strong>$82.10</strong>
+      <small class="ok">Due in 2 days</small>
+      <div class="bill-footer">
+        <span><i class="bi bi-calendar3"></i> Oct 7, 2023</span>
+        <button class="btn outline">Schedule</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BILL ITEM : PAID -->
+  <div class="bill-box paid">
+    <div class="bill-left">
+      <div class="bill-icon green">
+        <i class="bi bi-cart"></i>
+      </div>
+      <div>
+        <strong>Grocery Delivery</strong>
+        <small>Whole Foods Market</small>
+      </div>
+    </div>
+
+    <div class="bill-right">
+      <strong>$142.00</strong>
+      <small class="ok">Paid</small>
+      <div class="bill-footer">
+        <span class="success">
+          <i class="bi bi-check-circle"></i>
+          Transaction settled on Oct 4
+        </span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+                </div>
+
+                <!-- TIP -->
+                <div class="tip">
+                    💡 Pro Tip: You can save $45/mo by canceling unused subscriptions found in your
+                    <span>Insights</span>.
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

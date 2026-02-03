@@ -1,0 +1,473 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f4f7f6;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR (UNCHANGED) */
+.sidebar {
+  width: 260px;
+  background: #fff;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  background: #00e676;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-icon i { color: #0b2e1a; }
+
+.brand small {
+  font-size: 11px;
+  color: #00c853;
+}
+
+.sidebar nav a {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+}
+
+.sidebar nav a.active,
+.sidebar nav a:hover {
+  background: #e9fdf2;
+  color: #00c853;
+}
+
+.add-transaction {
+  margin-top: auto;
+  padding: 12px;
+  background: #00e676;
+  border: none;
+  border-radius: 8px;
+  color: white;
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+  padding: 30px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+
+/* TOPBAR */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.top-right {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.search {
+  display: flex;
+  gap: 8px;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 20px;
+}
+
+.search input {
+  border: none;
+  outline: none;
+}
+
+.profile span {
+  display: block;
+  font-size: 11px;
+  color: #00c853;
+}
+
+/* BUTTONS */
+.btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn.primary { background: #00e676; }
+.btn.dark { background: #0b2e1a; color: #fff; }
+.btn.ghost { background: #e9fdf2; }
+
+/* STATS */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding-top: 10px;
+}
+
+.stat-card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 14px;
+}
+
+.pos { color: #00c853; font-size: 12px; }
+.neg { color: #e53935; font-size: 12px; }
+
+/* PROGRESS */
+.progress {
+  height: 8px;
+  background: #eee;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #00e676;
+}
+
+/* GRID */
+.bill-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+/* ================= CALENDAR ================= */
+
+.calendar {
+  padding: 18px;
+}
+
+/* HEADER */
+.calendar-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.calendar-head h3 {
+  font-size: 18px;
+}
+
+.calendar-head small {
+  font-size: 12px;
+  color: #777;
+}
+
+.arrows button {
+  background: #e9fdf2;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+/* WEEKDAYS */
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 6px;
+}
+
+.weekdays span {
+  text-align: center;
+  font-size: 11px;
+  color: #888;
+}
+
+/* DAYS GRID */
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.day {
+  background: #fff;
+  border-radius: 10px;
+  min-height: 70px;
+  padding: 6px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.day.empty {
+  background: transparent;
+}
+
+.date {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* TODAY */
+.day.today {
+  border: 2px solid #00e676;
+}
+
+/* BILL TAG */
+.bill {
+  font-size: 10px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  margin-top: auto;
+  width: fit-content;
+}
+
+.bill.green {
+  background: #e9fdf2;
+  color: #00c853;
+}
+
+.bill.red {
+  background: #fff3e0;
+  color: #e53935;
+}
+
+.bill.orange {
+  background: #fff8e1;
+  color: #ff9800;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* TABLET */
+@media (max-width: 900px) {
+  .days {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .weekdays {
+    display: none; /* cleaner tablet UI */
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .days {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .day {
+    min-height: 90px;
+  }
+
+  .calendar-head h3 {
+    font-size: 16px;
+  }
+}
+
+/* ================= UPCOMING BILLS ================= */
+
+.upcoming-card {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 14px;
+}
+
+/* HEADER */
+.upcoming-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.upcoming-header h3 {
+  font-size: 16px;
+}
+
+.chip {
+  background: #e9fdf2;
+  color: #00c853;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* BILL BOX */
+.bill-box {
+  border: 1px solid #e9f0eb;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+/* LEFT */
+.bill-left {
+  display: flex;
+  gap: 12px;
+}
+
+.bill-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.bill-icon.red { background: #fdecea; color: #e53935; }
+.bill-icon.blue { background: #e3f2fd; color: #1e88e5; }
+.bill-icon.orange { background: #fff3e0; color: #fb8c00; }
+.bill-icon.green { background: #e8f5e9; color: #2e7d32; }
+
+.bill-left strong {
+  font-size: 14px;
+}
+
+.bill-left small {
+  display: block;
+  font-size: 12px;
+  color: #777;
+}
+
+/* RIGHT */
+.bill-right {
+  text-align: right;
+}
+
+.bill-right strong {
+  font-size: 15px;
+}
+
+.bill-right small {
+  display: block;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.danger { color: #e53935; }
+.warn { color: #fb8c00; }
+.ok { color: #00c853; }
+
+/* FOOTER */
+.bill-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #777;
+}
+
+.bill-footer.space {
+  justify-content: space-between;
+}
+
+.auto {
+  color: #00c853;
+}
+
+/* BUTTONS */
+.btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.btn.dark {
+  background: #0b2e1a;
+  color: #fff;
+}
+
+.btn.outline {
+  background: #fff;
+  border: 1px solid #00c853;
+  color: #00c853;
+}
+
+/* TOGGLE */
+.toggle {
+  position: relative;
+  width: 38px;
+  height: 20px;
+}
+
+.toggle input {
+  display: none;
+}
+
+.toggle span {
+  position: absolute;
+  inset: 0;
+  background: #c8e6c9;
+  border-radius: 20px;
+}
+
+.toggle span::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  top: 2px;
+  left: 20px;
+}
+
+/* PAID */
+.bill-box.paid {
+  opacity: 0.6;
+}
+
+.success {
+  color: #00c853;
+}
+
+
+/* TIP */
+.tip {
+  margin-top: 24px;
+  background: #e9fdf2;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 13px;
+}
+
+.tip span {
+  color: #00c853;
+}

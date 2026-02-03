@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Budgets | FinTrack</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <link rel="stylesheet" href="css/budgets.css">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <!-- FIXED SIDEBAR -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo-icon">
+          <i class="bi bi-wallet2"></i>
+        </div>
+        <div>
+          <h3>FinTrack</h3>
+          <small>PRO ADVISOR</small>
+        </div>
+      </div>
+
+      <nav>
+        <a href="dashboard.html"><i class="bi bi-grid"></i> Dashboard</a>
+        <a href="add-transaction.html"><i class="bi bi-arrow-left-right"></i> Transactions</a>
+        <a href="budgets.html" class="active"><i class="bi bi-pie-chart"></i> Budgets</a>
+        <a href="reports.html"><i class="bi bi-graph-up"></i> Reports</a>
+        <a href="bills.html" ><i class="bi bi-calendar-check"></i> Bills</a>
+        <a href="savings.html"><i class="bi bi-bullseye"></i> Savings</a>
+      </nav>
+
+      <button class="primary-btn">+ Add Budget</button>
+    </aside>
+
+    <!-- PAGE -->
+    <main class="page">
+      <div class="container">
+        <!-- ================= TOPBAR ================= -->
+        <header class="topbar">
+          <div>
+            <h1>Budgets</h1>
+            <p>Plan, track, and control your spending limits</p>
+          </div>
+
+          <div class="top-right">
+            <div class="search">
+              <i class="bi bi-search"></i>
+              <input type="text" placeholder="Search data...">
+            </div>
+            <i class="bi bi-bell"></i>
+            <div class="profile">
+              Alex Johnson <span>Pro Plan</span>
+            </div>
+          </div>
+        </header>
+
+
+        <!-- SUMMARY -->
+        <div class="summary">
+          <div class="card">
+            <p>Total Budget</p>
+            <h2>$5,000</h2>
+          </div>
+          <div class="card">
+            <p>Total Spent</p>
+            <h2>$3,420</h2>
+          </div>
+          <div class="card">
+            <p>Remaining</p>
+            <h2>$1,580</h2>
+          </div>
+        </div>
+
+        <!-- BUDGET LIST -->
+        <div class="budget-grid">
+
+          <!-- Budget Card -->
+          <div class="budget-card">
+            <div class="budget-head">
+              <h3>Groceries</h3>
+              <span>$400 / $500</span>
+            </div>
+
+            <div class="progress">
+              <div class="progress-bar" style="width:80%"></div>
+            </div>
+
+            <p class="status warn">⚠ Almost reached</p>
+          </div>
+
+          <div class="budget-card">
+            <div class="budget-head">
+              <h3>Rent</h3>
+              <span>$1,500 / $1,500</span>
+            </div>
+
+            <div class="progress">
+              <div class="progress-bar danger" style="width:100%"></div>
+            </div>
+
+            <p class="status danger">❌ Budget exceeded</p>
+          </div>
+
+          <div class="budget-card">
+            <div class="budget-head">
+              <h3>Entertainment</h3>
+              <span>$220 / $400</span>
+            </div>
+
+            <div class="progress">
+              <div class="progress-bar safe" style="width:55%"></div>
+            </div>
+
+            <p class="status safe">✅ On track</p>
+          </div>
+
+          <div class="budget-card">
+            <div class="budget-head">
+              <h3>Transport</h3>
+              <span>$300 / $500</span>
+            </div>
+
+            <div class="progress">
+              <div class="progress-bar safe" style="width:60%"></div>
+            </div>
+
+            <p class="status safe">✅ On track</p>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+</body>
+
+</html>

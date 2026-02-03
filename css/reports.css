@@ -1,0 +1,325 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #f4f7f6;
+  overflow-x: hidden;
+}
+
+/* LAYOUT */
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ================= SIDEBAR (FINAL MATCHED VERSION) ================= */
+
+.sidebar {
+  width: 260px;
+  background: #ffffff;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* BRAND */
+.brand {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  background: #00e676;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-icon i {
+  color: #0b2e1a;
+}
+
+.brand small {
+  font-size: 11px;
+  color: #00c853;
+}
+
+/* NAV LINKS */
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/* ACTIVE + HOVER */
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background: #e9fdf2;
+  color: #00c853;
+}
+
+/* SIDEBAR BUTTON (MATCHES FIRST CSS) */
+.add-transaction,
+.primary-btn {
+  margin-top: auto;
+  padding: 12px;
+  background: #00e676;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+
+/* MAIN */
+.main {
+  flex: 1;
+  padding: 28px;
+}
+
+/* TOPBAR */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.top-right {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.search {
+  display: flex;
+  gap: 8px;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 20px;
+}
+
+.search input {
+  border: none;
+  outline: none;
+}
+
+.profile span {
+  display: block;
+  font-size: 11px;
+  color: #00c853;
+}
+
+/* ACTIONS */
+.report-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.date-range {
+  background: #e9fdf2;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.export-btn {
+  background: #00e676;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+}
+
+/* CONTENT */
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* TABS */
+.tabs {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.tab.active {
+  color: #00c853;
+  border-bottom: 2px solid #00c853;
+}
+
+/* SECTIONS */
+.report-section { display: none; }
+.report-section.active { display: block; }
+
+/* KPI */
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 14px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  padding-top: 10px;
+}
+/* ================= SPENDING TRENDS ================= */
+
+.spending-trends {
+  padding-top: 10px;
+}
+
+.muted {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 12px;
+}
+
+/* HEADER */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.legend span {
+  font-size: 12px;
+  margin-left: 12px;
+  color: #555;
+}
+
+/* DOTS */
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.income-dot {
+  background: #00e676;
+}
+
+.expense-dot {
+  background: #7cb342;
+}
+
+/* WRAPPER */
+.trend-wrapper {
+  display: flex;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+/* Y AXIS */
+.y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #888;
+  padding-bottom: 22px;
+}
+
+/* CHART AREA */
+.trend-chart {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  height: 240px;
+  flex: 1;
+  position: relative;
+}
+
+/* GRID BACKGROUND */
+.trend-chart::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to top,
+    transparent,
+    transparent 18%,
+    rgba(0,0,0,0.04) 19%
+  );
+}
+
+/* COLUMN */
+.trend-col {
+  flex: 1;
+  background: #e9fdf2;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+  padding-bottom: 6px;
+}
+
+/* BARS */
+.bar {
+  width: 100%;
+  transition: 0.3s ease;
+}
+
+.bar.income {
+  background: #00e676;
+}
+
+.bar.expense {
+  background: #7cb342;
+}
+
+/* HOVER EFFECT */
+.trend-col:hover .bar {
+  opacity: 0.85;
+}
+
+/* LABEL */
+.label {
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #555;
+}
+
+/* ALERTS */
+.alert {
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.warn { background: #fff3e0; }
+.success { background: #e8f5e9; }
+.info { background: #e3f2fd; }

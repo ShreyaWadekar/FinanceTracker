@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Reports & Insights | FinTrack</title>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/reports.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- ================= SIDEBAR ================= -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-icon">
+                    <i class="bi bi-wallet2"></i>
+                </div>
+                <div>
+                    <h3>FinTrack</h3>
+                    <small>PRO ADVISOR</small>
+                </div>
+            </div>
+
+            <nav>
+                <a href="dashboard.html"><i class="bi bi-grid"></i> Dashboard</a>
+                <a href="add-transaction.html"><i class="bi bi-arrow-left-right"></i> Transactions</a>
+                <a href="budgets.html"><i class="bi bi-pie-chart"></i> Budgets</a>
+                <a href="reports.html" class="active"><i class="bi bi-graph-up"></i> Reports</a>
+                <a href="bills.html" ><i class="bi bi-calendar-check"></i> Bills</a>
+                <a href="savings.html"><i class="bi bi-bullseye"></i> Savings</a>
+            </nav>
+
+            <button class="primary-btn">+ Add Transaction</button>
+        </aside>
+
+        <!-- ================= MAIN ================= -->
+        <main class="main">
+            <div class="container">
+
+                <!-- ================= TOPBAR ================= -->
+                <header class="topbar">
+                    <div>
+                        <h1>Financial Reports & Insights</h1>
+                        <p>Visualize your spending, income growth, and net worth.</p>
+                    </div>
+
+                    <div class="top-right">
+                        <div class="search">
+                            <i class="bi bi-search"></i>
+                            <input type="text" placeholder="Search data...">
+                        </div>
+                        <i class="bi bi-bell"></i>
+                        <div class="profile">
+                            Alex Johnson <span>Pro Plan</span>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- ================= ACTIONS ================= -->
+                <div class="report-actions">
+                    <div class="date-range">
+                        <i class="bi bi-calendar3"></i>
+                        Oct 2023 – Nov 2023
+                    </div>
+
+                    <button class="export-btn">
+                        <i class="bi bi-download"></i> Export Data
+                    </button>
+                </div>
+
+                <!-- ================= TABS ================= -->
+                <div class="tabs">
+                    <span class="tab active" onclick="showSection('overview', this)">Overview</span>
+                    <span class="tab" onclick="showSection('spending', this)">Spending Analysis</span>
+                    <span class="tab" onclick="showSection('income', this)">Income Growth</span>
+                    <span class="tab" onclick="showSection('networth', this)">Net Worth</span>
+                </div>
+
+                <!-- ================= OVERVIEW ================= -->
+                <section id="overview" class="report-section active">
+
+                    <!-- KPI CARDS -->
+                    <div class="kpis">
+                        <div class="card">
+                            <p>Total Balance</p>
+                            <h2>$12,450</h2>
+                            <span class="positive">▲ 2.5% this month</span>
+                        </div>
+                        <div class="card">
+                            <p>Savings Rate</p>
+                            <h2>24%</h2>
+                            <span class="negative">▼ 1.2% from avg</span>
+                        </div>
+                        <div class="card">
+                            <p>Top Expense</p>
+                            <h2>Housing</h2>
+                            <span class="neutral">Stable</span>
+                        </div>
+                    </div>
+
+                    <div class="grid">
+
+                        <!-- ================= SPENDING TRENDS ================= -->
+                        <div class="card spending-trends">
+
+                            <!-- HEADER / LEGEND -->
+                            <div class="card-header legend">
+                                <h3>Spending Trends</h3>
+                                <div>
+                                    <span><i class="dot income-dot"></i> Income</span>
+                                    <span><i class="dot expense-dot"></i> Expenses</span>
+                                </div>
+                            </div>
+
+                            <p class="muted">Daily comparison of income and expenses</p>
+
+                            <div class="trend-wrapper">
+
+                                <!-- Y AXIS -->
+                                <div class="y-axis">
+                                    <span>$5k</span>
+                                    <span>$4k</span>
+                                    <span>$3k</span>
+                                    <span>$2k</span>
+                                    <span>$1k</span>
+                                </div>
+
+                                <!-- CHART -->
+                                <div class="trend-chart">
+
+                                    <div class="trend-col">
+                                        <div class="bar expense" style="height:40%"></div>
+                                        <div class="bar income" style="height:65%"></div>
+                                        <span class="label">Mon</span>
+                                    </div>
+
+                                    <div class="trend-col">
+                                        <div class="bar expense" style="height:55%"></div>
+                                        <div class="bar income" style="height:75%"></div>
+                                        <span class="label">Tue</span>
+                                    </div>
+
+                                    <div class="trend-col">
+                                        <div class="bar expense" style="height:35%"></div>
+                                        <div class="bar income" style="height:60%"></div>
+                                        <span class="label">Wed</span>
+                                    </div>
+
+                                    <div class="trend-col">
+                                        <div class="bar expense" style="height:50%"></div>
+                                        <div class="bar income" style="height:70%"></div>
+                                        <span class="label">Thu</span>
+                                    </div>
+
+                                    <div class="trend-col">
+                                        <div class="bar expense" style="height:30%"></div>
+                                        <div class="bar income" style="height:80%"></div>
+                                        <span class="label">Fri</span>
+                                    </div>
+
+                                    <div class="trend-col">
+                                        <div class="bar expense" style="height:40%"></div>
+                                        <div class="bar income" style="height:75%"></div>
+                                        <span class="label">Sat</span>
+                                    </div>
+
+                                    <div class="trend-col">
+                                        <div class="bar expense" style="height:35%"></div>
+                                        <div class="bar income" style="height:60%"></div>
+                                        <span class="label">Sun</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- ALERTS & INSIGHTS -->
+                        <div class="card">
+                            <h3>Alerts & Insights</h3>
+                            <div class="alert warn">⚠ Dining budget exceeded</div>
+                            <div class="alert success">💡 Transport optimized</div>
+                            <div class="alert info">📊 Savings stable</div>
+                        </div>
+
+                        <!-- CATEGORY BREAKDOWN -->
+                        <div class="card">
+                            <h3>Spending by Category</h3>
+                            <ul class="categories">
+                                <li><i class="dot income-dot"></i> Housing – $2,100</li>
+                                <li><i class="dot expense-dot"></i> Food – $840</li>
+                                <li><i class="dot olive"></i> Transport – $630</li>
+                                <li><i class="dot gray"></i> Others – $660</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- ================= SPENDING ANALYSIS ================= -->
+                <section id="spending" class="report-section">
+                    <h2>Spending Analysis</h2>
+                    <div class="card">
+                        <p>Deep dive into category-wise spending, trends, and monthly comparisons.</p>
+                    </div>
+                </section>
+
+                <!-- ================= INCOME GROWTH ================= -->
+                <section id="income" class="report-section">
+                    <h2>Income Growth</h2>
+                    <div class="card">
+                        <p>Track salary growth, passive income, and monthly income sources.</p>
+                    </div>
+                </section>
+
+                <!-- ================= NET WORTH ================= -->
+                <section id="networth" class="report-section">
+                    <h2>Net Worth</h2>
+                    <div class="card">
+                        <p>Assets vs liabilities and long-term financial strength.</p>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+    </div>
+
+    <!-- ================= JS ================= -->
+    <script>
+        function showSection(id, el) {
+            document.querySelectorAll('.report-section')
+                .forEach(section => section.classList.remove('active'));
+
+            document.querySelectorAll('.tab')
+                .forEach(tab => tab.classList.remove('active'));
+
+            document.getElementById(id).classList.add('active');
+            el.classList.add('active');
+        }
+    </script>
+
+</body>
+
+</html>
