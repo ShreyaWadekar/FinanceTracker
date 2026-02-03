@@ -19,6 +19,117 @@ html, body {
   min-height: 100vh;
 }
 
+@media (max-width: 992px) {
+
+  /* Sidebar collapses */
+  .sidebar {
+    position: fixed;
+    left: -280px;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  /* Main full width */
+  .main {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  /* Topbar wraps */
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .top-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* KPI cards stack */
+  .kpis {
+    grid-template-columns: 1fr;
+  }
+
+  /* Main grid stacks */
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Tabs wrap */
+  .tabs {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+@media (max-width: 576px) {
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  /* Cards tighter */
+  .card {
+    padding: 14px;
+  }
+
+  /* Search full width */
+  .search {
+    width: 100%;
+  }
+
+  .search input {
+    width: 100%;
+  }
+
+  /* Report actions stack */
+  .report-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  /* Chart smaller */
+  .trend-chart {
+    height: 180px;
+  }
+
+  /* Hide Y-axis on mobile */
+  .y-axis {
+    display: none;
+  }
+
+  .trend-wrapper {
+    gap: 6px;
+  }
+}
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Show menu icon on mobile */
+@media (max-width: 992px) {
+  .menu-icon {
+    display: block;
+  }
+}
+
 /* ================= SIDEBAR (FINAL MATCHED VERSION) ================= */
 
 .sidebar {

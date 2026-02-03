@@ -12,6 +12,112 @@ body {
   display: flex;
   height: 100vh;
 }
+@media (max-width: 992px) {
+
+  /* Sidebar collapses */
+  .sidebar {
+    position: fixed;
+    left: -280px;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  /* Page full width */
+  .page {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  /* Layout stacks */
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  /* Side cards move below form */
+  .side {
+    margin-top: 20px;
+  }
+
+  /* Topbar wraps */
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .top-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 576px) {
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  /* Form padding */
+  .form-card {
+    padding: 16px;
+  }
+
+  /* Row fields stack */
+  .row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Toggle buttons smaller */
+  .toggle-btn {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  /* Progress text */
+  .impact-box p {
+    font-size: 13px;
+  }
+
+  /* Buttons full width */
+  .actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+
+  /* Search full width */
+  .search {
+    width: 100%;
+  }
+
+  .search input {
+    width: 100%;
+  }
+}
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Show menu icon on mobile */
+@media (max-width: 992px) {
+  .menu-icon {
+    display: block;
+  }
+}
 
 /* TOP NAV *//* TOPBAR */
 .topbar {

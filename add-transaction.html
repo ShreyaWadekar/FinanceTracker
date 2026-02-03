@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>FinTrack | Add Transaction</title>
 
   <!-- Bootstrap Icons -->
@@ -44,6 +46,7 @@
 <div class="page-container">
      <!-- TOP BAR -->
             <header class="topbar">
+               <i class="bi bi-list menu-icon" onclick="toggleSidebar()"></i>
                 <div>
                     <h1>Add New Transaction</h1>
   <p class="subtitle">Record your spending or earnings to keep your budget on track.</p>
@@ -233,6 +236,10 @@ function saveTransaction(e) {
   localStorage.setItem("transactions", JSON.stringify(data));
 
   window.location.href = "dashboard.html";
+}
+
+function toggleSidebar() {
+  document.querySelector('.sidebar').classList.toggle('show');
 }
 
 </script>

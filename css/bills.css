@@ -14,6 +14,124 @@ body {
   display: flex;
   min-height: 100vh;
 }
+@media (max-width: 992px) {
+
+  /* Sidebar collapses */
+  .sidebar {
+    position: fixed;
+    left: -280px;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  /* Main area full width */
+  .main {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  /* Topbar wraps */
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .top-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Stats stack */
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  /* Calendar + Upcoming stack */
+  .bill-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+@media (max-width: 576px) {
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  /* Buttons full width */
+  .btn,
+  .add-transaction {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Search full width */
+  .search {
+    width: 100%;
+  }
+
+  .search input {
+    width: 100%;
+  }
+
+  /* Calendar adjustments */
+  .weekdays span,
+  .day {
+    font-size: 11px;
+  }
+
+  .day small.bill {
+    font-size: 10px;
+  }
+
+  /* Bill item stacks */
+  .bill-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .bill-right {
+    width: 100%;
+  }
+
+  .bill-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  /* Tip text smaller */
+  .tip {
+    font-size: 13px;
+  }
+}
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Show menu icon on mobile */
+@media (max-width: 992px) {
+  .menu-icon {
+    display: block;
+  }
+}
 
 /* SIDEBAR (UNCHANGED) */
 .sidebar {

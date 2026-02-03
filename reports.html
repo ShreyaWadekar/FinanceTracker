@@ -2,7 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
     <title>Reports & Insights | FinTrack</title>
 
     <!-- Bootstrap Icons -->
@@ -46,6 +49,7 @@
 
                 <!-- ================= TOPBAR ================= -->
                 <header class="topbar">
+                    <i class="bi bi-list menu-icon" onclick="toggleSidebar()"></i>
                     <div>
                         <h1>Financial Reports & Insights</h1>
                         <p>Visualize your spending, income growth, and net worth.</p>
@@ -245,6 +249,12 @@
             document.getElementById(id).classList.add('active');
             el.classList.add('active');
         }
+       
+function toggleSidebar() {
+  document.querySelector('.sidebar').classList.toggle('show');
+}
+
+
     </script>
 
 </body>

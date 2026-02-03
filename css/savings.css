@@ -71,6 +71,135 @@ body {
   border-radius: 8px;
   color: white;
 }
+@media (max-width: 992px) {
+
+  /* Sidebar collapses */
+  .sidebar {
+    position: fixed;
+    left: -280px;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  /* Main full width */
+  .main {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  /* Topbar wraps */
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .top-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Actions wrap */
+  .actions {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Main savings grid stacks */
+  .savings-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+@media (max-width: 576px) {
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  h4 {
+    font-size: 15px;
+  }
+
+  /* Buttons full width */
+  .btn,
+  .add-transaction,
+  .manage-btn,
+  .goal-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Search full width */
+  .search {
+    width: 100%;
+  }
+
+  .search input {
+    width: 100%;
+  }
+
+  /* Quick links wrap */
+  .quick-links {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .quick-links li {
+    font-size: 12px;
+  }
+
+  /* Goals grid stack */
+  .goals {
+    grid-template-columns: 1fr;
+  }
+
+  /* Goal images scale */
+  .goal-card img {
+    height: 160px;
+    object-fit: cover;
+  }
+
+  /* Recent items stack */
+  .recent-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  /* Reduce card padding */
+  .total-card,
+  .insight-card,
+  .recent-card,
+  .goal-card {
+    padding: 14px;
+  }
+}
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Show menu icon on mobile */
+@media (max-width: 992px) {
+  .menu-icon {
+    display: block;
+  }
+}
 
 /* MAIN */
 .main {

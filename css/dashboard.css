@@ -13,6 +13,112 @@ body {
   display: flex;
   height: 100vh;
 }
+@media (max-width: 992px) {
+
+  /* Sidebar collapses */
+  .sidebar {
+    position: fixed;
+    left: -280px;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  /* Main full width */
+  .main {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  /* Topbar wraps */
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .top-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Summary cards stack */
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Main content stacks */
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  /* Budget moves below transactions */
+  .budget {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 576px) {
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  /* Cards single column */
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* Search full width */
+  .search {
+    width: 100%;
+  }
+
+  .search input {
+    width: 100%;
+  }
+
+  /* Table scrollable */
+  .transactions {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 600px;
+  }
+
+  /* Budget circles smaller */
+  .circle {
+    width: 48px;
+    height: 48px;
+    font-size: 12px;
+  }
+
+  /* Buttons full width */
+  .add-transaction {
+    width: 100%;
+    text-align: center;
+  }
+}
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Show menu icon on mobile */
+@media (max-width: 992px) {
+  .menu-icon {
+    display: block;
+  }
+}
 
 /* SIDEBAR */
 .sidebar {

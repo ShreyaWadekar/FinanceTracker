@@ -13,6 +13,87 @@ body {
   display: flex;
   height: 100vh;
 }
+@media (max-width: 992px) {
+
+  .main {
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+    min-height: auto;
+    padding: 40px 24px;
+  }
+
+  .left {
+    align-items: center;
+    text-align: center;
+  }
+
+  .left-content {
+    max-width: 500px;
+  }
+
+  .privacy {
+    margin-top: 30px;
+  }
+
+}
+@media (max-width: 576px) {
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .left {
+    padding: 30px 20px;
+  }
+
+  .right {
+    padding: 30px 20px;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  .input-box input {
+    font-size: 14px;
+  }
+
+  .login-btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .social {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .social button {
+    width: 100%;
+  }
+
+}
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Show menu icon on mobile */
+@media (max-width: 992px) {
+  .menu-icon {
+    display: block;
+  }
+}
 
 /* LEFT */
 .left {
